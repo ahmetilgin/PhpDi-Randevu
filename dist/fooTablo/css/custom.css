@@ -1,0 +1,16 @@
+@CHARSET "UTF-8";
+
+body{
+	background:url('../image/omu_logo2.png') no-repeat center center fixed ;
+    -webkit-background-size: 700px;
+    -moz-background-size: 700px;
+    -o-background-size: 700px;
+    background-size: 550px;
+    background-position: 50% 75%;
+    opacity : 0.9;
+}
+
+.thumbnail img {
+    width: 40px;
+    height: 40px;
+}

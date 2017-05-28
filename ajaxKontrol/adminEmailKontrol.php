@@ -1,0 +1,26 @@
+<?php
+include_once '../veritabani/veritabaniAyar.php';
+include_once '../dao/doktorDAO.php';
+include_once '../dao/kullaniciGirisDAO.php';
+include_once '../dao/adminDAO.php';
+
+$doktordao = new DoktorDAO();
+$dkontrol = $doktordao->DoktorEmailKontrol(trim($_POST['email']));
+
+$kuldao = new KullaniciGirisDAO();
+$kkontrol = $kuldao->profilKontrol(trim($_POST['email']));
+
+$admindao = new AdminDAO();
+$akontrol = $admindao->AdminEamilKontrol(trim($_POST['email']));
+
+if ($dkontrol == 1 || $kkontrol == 1 || $akontrol == 1)
+{
+    echo 1;
+
+} else {
+    echo 0;    
+  
+}
+
+
+?>
