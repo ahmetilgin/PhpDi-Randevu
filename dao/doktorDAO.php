@@ -117,9 +117,9 @@ class DoktorDAO
         try {
             $baglanti = new VeriTabaniBaglanti();
             $conn = $baglanti->pdo_baglanti();
-            $sorgu = $conn->query("Select ad, soyad from doktor where email='$email'");
+            $sorgu = $conn->query("Select ad, soyad from doktor");
             $row = $sorgu->fetch(PDO::FETCH_LAZY);
-            $ad_soyad = $row->ad.' '.$row->soyad;
+            $ad_soyad = "$row->ad";
         } catch (Exception $ex) {
             die($ex->getMessage());
         } finally {
