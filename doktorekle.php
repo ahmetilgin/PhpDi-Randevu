@@ -101,6 +101,10 @@ function email_check()
                     <td><input name="tel" type="tel" class="form-control" required autofocus/></td>
                 </tr>
                 <tr>
+                    <td><label>Sifre</label></td>
+                    <td><input name="Sifre" type="Sifre" class="form-control" required autofocus/></td>
+                </tr>
+                <tr>
                     <td></td>
                     <td><button class="btn btn-primary" type="submit"  id="kbutton" disabled="disabled">Kaydet</button></td>
                 </tr>
@@ -152,6 +156,7 @@ function email_check()
                         <input type="email" value="<?php echo $list->getEmail(); ?>" name="email"  class="hidden"/>
                         <input type="tel" value="<?php echo $list->getTel(); ?>" name="tel"  class="hidden"/>
                         <input type="date" value="<?php echo $list->getDogumTarihi(); ?>" name="dogumTarihi"  class="hidden"/>
+                        <input type="sifre" value="<?php echo $list->getSifre(); ?>" name="sifre"  class="hidden"/>
                         <button type="submit" class="btn btn-warning glyphicon glyphicon-pencil" title="Güncelle" ></button>
                     </form>
                     </th>

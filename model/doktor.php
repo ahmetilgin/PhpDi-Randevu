@@ -1,7 +1,7 @@
 <?php
 class Doktor 
 {
-    private $doktorId, $ad, $soyad, $dogumTarihi, $email,$tel, $username;
+    private $doktorId, $ad, $soyad, $dogumTarihi, $email,$tel, $username,$sifre;
     
     function __construct() 
     {
@@ -11,6 +11,13 @@ class Doktor
     function setDoktorId($doktorId)
     {
         $this->doktorId = $doktorId;
+    }
+     function setSifre($sifre)
+    {
+        $this->$sifre = $sifre;
+    }
+    function getSifre(){
+        return $this->$sifre;
     }
     
     function getDoktorId()

@@ -65,7 +65,7 @@ class KullaniciGirisDAO
             
             $baglanti = new VeriTabaniBaglanti();
             $conn = $baglanti->pdo_baglanti();
-            $sorgu = $conn->query("Select *from kullanicigiris where email='$eposta' and sifre='$sifre' and yetki_id=0 ");
+            $sorgu = $conn->query("select *from doktor where email='$eposta' and sifre='$sifre'");
             $sonuc = $sorgu->fetch(PDO::FETCH_LAZY);
             if ($sonuc) {
                 $doktordao = new DoktorDAO();
@@ -109,12 +109,12 @@ class KullaniciGirisDAO
     
     function AdminLoginKontrol(KullaniciGiris $kul)
     {
-        //$email = "ufukpalavar52@gmail.com";
+ 
         try {
             $eposta = $kul->getEmail();
             $sifre = $kul->getSifre();
-            //$eposta = "ufukpalavar52@gmail.com";
-            $sifre = "b62b090624daf9bd41c51d545dbde330";
+  
+           //$sifre = "b62b090624daf9bd41c51d545dbde330";
             $baglanti = new VeriTabaniBaglanti();
             $conn = $baglanti->pdo_baglanti();
             $sorgu = $conn->query("Select *from kullanicigiris where email='$eposta' and sifre='$sifre' and yetki_id=1 ");
@@ -160,7 +160,7 @@ class KullaniciGirisDAO
     {
         $yenisifre = md5(sha1(md5($sifre)));
         
-        return $yenisifre;
+        return $sifre;
     }
     
     function profilKontrol($email)
